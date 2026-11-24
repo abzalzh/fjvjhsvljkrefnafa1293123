@@ -1,0 +1,687 @@
+{
+  "$defs": {
+    "CostEstimate": {
+      "additionalProperties": false,
+      "properties": {
+        "min_kzt": {
+          "maximum": 1000000000000000,
+          "minimum": 0,
+          "title": "Min Kzt",
+          "type": "integer"
+        },
+        "max_kzt": {
+          "maximum": 1000000000000000,
+          "minimum": 0,
+          "title": "Max Kzt",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "min_kzt",
+        "max_kzt"
+      ],
+      "title": "CostEstimate",
+      "type": "object"
+    },
+    "CostRule": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "estimate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CostEstimate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "basis": {
+          "enum": [
+            "person",
+            "group",
+            "unit"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "capacity": {
+          "default": 1,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Capacity",
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "verified",
+            "estimate",
+            "unknown"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "estimate",
+        "basis",
+        "kind",
+        "source_ids"
+      ],
+      "title": "CostRule",
+      "type": "object"
+    },
+    "Destination": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "maxLength": 5000,
+          "title": "Description",
+          "type": "string"
+        },
+        "region": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Region",
+          "type": "string"
+        },
+        "latitude": {
+          "maximum": 90,
+          "minimum": -90,
+          "title": "Latitude",
+          "type": "number"
+        },
+        "longitude": {
+          "maximum": 180,
+          "minimum": -180,
+          "title": "Longitude",
+          "type": "number"
+        },
+        "interests": {
+          "items": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Interests",
+          "type": "array"
+        },
+        "visit_minutes": {
+          "anyOf": [
+            {
+              "maximum": 720,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Visit Minutes"
+        },
+        "opens_minute": {
+          "anyOf": [
+            {
+              "maximum": 1439,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Opens Minute"
+        },
+        "closes_minute": {
+          "anyOf": [
+            {
+              "maximum": 1440,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Closes Minute"
+        },
+        "transport": {
+          "items": {
+            "enum": [
+              "public",
+              "car",
+              "taxi",
+              "tour"
+            ],
+            "type": "string"
+          },
+          "maxItems": 4,
+          "minItems": 1,
+          "title": "Transport",
+          "type": "array"
+        },
+        "open_months": {
+          "items": {
+            "maximum": 12,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Open Months",
+          "type": "array"
+        },
+        "infrastructure": {
+          "$ref": "#/$defs/Infrastructure"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "region",
+        "latitude",
+        "longitude",
+        "interests",
+        "transport",
+        "open_months",
+        "source_ids"
+      ],
+      "title": "Destination",
+      "type": "object"
+    },
+    "Infrastructure": {
+      "additionalProperties": false,
+      "properties": {
+        "mobile": {
+          "default": "unknown",
+          "enum": [
+            "yes",
+            "limited",
+            "no",
+            "unknown"
+          ],
+          "title": "Mobile",
+          "type": "string"
+        },
+        "toilets": {
+          "default": "unknown",
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ],
+          "title": "Toilets",
+          "type": "string"
+        },
+        "food": {
+          "default": "unknown",
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ],
+          "title": "Food",
+          "type": "string"
+        },
+        "accommodation": {
+          "default": "unknown",
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ],
+          "title": "Accommodation",
+          "type": "string"
+        },
+        "accessible": {
+          "default": "unknown",
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ],
+          "title": "Accessible",
+          "type": "string"
+        }
+      },
+      "title": "Infrastructure",
+      "type": "object"
+    },
+    "RouteDay": {
+      "additionalProperties": false,
+      "properties": {
+        "destination_ids": {
+          "items": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Destination Ids",
+          "type": "array"
+        },
+        "connection_ids": {
+          "items": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "type": "string"
+          },
+          "maxItems": 9,
+          "minItems": 2,
+          "title": "Connection Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "destination_ids",
+        "connection_ids"
+      ],
+      "title": "RouteDay",
+      "type": "object"
+    },
+    "RouteTemplate": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "origin": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Origin",
+          "type": "string"
+        },
+        "transport": {
+          "enum": [
+            "public",
+            "car",
+            "taxi",
+            "tour"
+          ],
+          "title": "Transport",
+          "type": "string"
+        },
+        "days": {
+          "items": {
+            "$ref": "#/$defs/RouteDay"
+          },
+          "maxItems": 14,
+          "minItems": 1,
+          "title": "Days",
+          "type": "array"
+        },
+        "food_cost_id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "title": "Food Cost Id",
+          "type": "string"
+        },
+        "accommodation_cost_id": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accommodation Cost Id"
+        },
+        "activity_cost_ids": {
+          "patternProperties": {
+            "^[a-zA-Z0-9_-]+$": {
+              "items": {
+                "maxLength": 80,
+                "minLength": 1,
+                "pattern": "^[a-zA-Z0-9_-]+$",
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "propertyNames": {
+            "maxLength": 80,
+            "minLength": 1
+          },
+          "title": "Activity Cost Ids",
+          "type": "object"
+        },
+        "max_travelers": {
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Max Travelers",
+          "type": "integer"
+        },
+        "available_from": {
+          "format": "date",
+          "title": "Available From",
+          "type": "string"
+        },
+        "available_until": {
+          "format": "date",
+          "title": "Available Until",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "origin",
+        "transport",
+        "days",
+        "food_cost_id",
+        "activity_cost_ids",
+        "max_travelers",
+        "available_from",
+        "available_until",
+        "source_ids"
+      ],
+      "title": "RouteTemplate",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "checked_at": {
+          "format": "date",
+          "title": "Checked At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "url",
+        "checked_at"
+      ],
+      "title": "Source",
+      "type": "object"
+    },
+    "TransportConnection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "origin": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Origin",
+          "type": "string"
+        },
+        "destination": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Destination",
+          "type": "string"
+        },
+        "transport": {
+          "enum": [
+            "public",
+            "car",
+            "taxi",
+            "tour"
+          ],
+          "title": "Transport",
+          "type": "string"
+        },
+        "minutes": {
+          "anyOf": [
+            {
+              "maximum": 1440,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minutes"
+        },
+        "distance_km": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Distance Km"
+        },
+        "cost_id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "title": "Cost Id",
+          "type": "string"
+        },
+        "departures": {
+          "anyOf": [
+            {
+              "items": {
+                "maximum": 1439,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Departures"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "origin",
+        "destination",
+        "transport",
+        "cost_id",
+        "source_ids"
+      ],
+      "title": "TransportConnection",
+      "type": "object"
+    },
+    "TransportData": {
+      "additionalProperties": false,
+      "properties": {
+        "connections": {
+          "items": {
+            "$ref": "#/$defs/TransportConnection"
+          },
+          "title": "Connections",
+          "type": "array"
+        },
+        "routes": {
+          "items": {
+            "$ref": "#/$defs/RouteTemplate"
+          },
+          "title": "Routes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "connections",
+        "routes"
+      ],
+      "title": "TransportData",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "destinations": {
+      "items": {
+        "$ref": "#/$defs/Destination"
+      },
+      "title": "Destinations",
+      "type": "array"
+    },
+    "transport": {
+      "$ref": "#/$defs/TransportData"
+    },
+    "costs": {
+      "items": {
+        "$ref": "#/$defs/CostRule"
+      },
+      "title": "Costs",
+      "type": "array"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/Source"
+      },
+      "title": "Sources",
+      "type": "array"
+    }
+  },
+  "required": [
+    "destinations",
+    "transport",
+    "costs",
+    "sources"
+  ],
+  "title": "Dataset",
+  "type": "object"
+}

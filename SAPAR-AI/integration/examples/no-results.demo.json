@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "status": "no_results",
+  "preferences": {
+    "origin": "Almaty",
+    "budget_kzt": 0,
+    "days": 3,
+    "travelers": 1,
+    "transport": "public",
+    "interests": [
+      "nature"
+    ],
+    "language": "ru",
+    "start_date": "2026-11-26",
+    "max_day_minutes": 600,
+    "require_accessible": false
+  },
+  "trips": [],
+  "reasons": [
+    {
+      "code": "budget_exceeded",
+      "message": "Верхняя граница расходов превышает бюджет.",
+      "suggested_fields": [
+        "budget_kzt",
+        "travelers"
+      ]
+    },
+    {
+      "code": "duration_unavailable",
+      "message": "Нет шаблонов на выбранное число дней.",
+      "suggested_fields": [
+        "days"
+      ]
+    }
+  ],
+  "data_mode": "demo"
+}

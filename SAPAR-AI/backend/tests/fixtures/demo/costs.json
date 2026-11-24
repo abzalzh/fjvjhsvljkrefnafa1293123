@@ -1,0 +1,51 @@
+[
+  {
+    "id": "bus",
+    "estimate": {
+      "min_kzt": 1000,
+      "max_kzt": 1500
+    },
+    "basis": "person",
+    "kind": "estimate",
+    "source_ids": [
+      "synthetic"
+    ]
+  },
+  {
+    "id": "food",
+    "estimate": {
+      "min_kzt": 2000,
+      "max_kzt": 3000
+    },
+    "basis": "person",
+    "kind": "estimate",
+    "source_ids": [
+      "synthetic"
+    ]
+  },
+  {
+    "id": "room",
+    "estimate": {
+      "min_kzt": 8000,
+      "max_kzt": 10000
+    },
+    "basis": "unit",
+    "capacity": 2,
+    "kind": "estimate",
+    "source_ids": [
+      "synthetic"
+    ]
+  },
+  {
+    "id": "entry",
+    "estimate": {
+      "min_kzt": 500,
+      "max_kzt": 700
+    },
+    "basis": "person",
+    "kind": "estimate",
+    "source_ids": [
+      "synthetic"
+    ]
+  }
+]

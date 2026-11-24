@@ -1,0 +1,495 @@
+{
+  "connections": [
+    {
+      "id": "demo_1_out",
+      "origin": "Almaty",
+      "destination": "demo_1",
+      "transport": "public",
+      "minutes": 60,
+      "cost_id": "bus",
+      "departures": [
+        540
+      ],
+      "source_ids": [
+        "synthetic"
+      ]
+    },
+    {
+      "id": "demo_1_back",
+      "origin": "demo_1",
+      "destination": "Almaty",
+      "transport": "public",
+      "minutes": 60,
+      "cost_id": "bus",
+      "departures": [
+        900
+      ],
+      "source_ids": [
+        "synthetic"
+      ]
+    },
+    {
+      "id": "demo_2_out",
+      "origin": "Almaty",
+      "destination": "demo_2",
+      "transport": "public",
+      "minutes": 60,
+      "cost_id": "bus",
+      "departures": [
+        540
+      ],
+      "source_ids": [
+        "synthetic"
+      ]
+    },
+    {
+      "id": "demo_2_back",
+      "origin": "demo_2",
+      "destination": "Almaty",
+      "transport": "public",
+      "minutes": 60,
+      "cost_id": "bus",
+      "departures": [
+        900
+      ],
+      "source_ids": [
+        "synthetic"
+      ]
+    },
+    {
+      "id": "demo_3_out",
+      "origin": "Almaty",
+      "destination": "demo_3",
+      "transport": "public",
+      "minutes": 60,
+      "cost_id": "bus",
+      "departures": [
+        540
+      ],
+      "source_ids": [
+        "synthetic"
+      ]
+    },
+    {
+      "id": "demo_3_back",
+      "origin": "demo_3",
+      "destination": "Almaty",
+      "transport": "public",
+      "minutes": 60,
+      "cost_id": "bus",
+      "departures": [
+        900
+      ],
+      "source_ids": [
+        "synthetic"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "demo_1d_0",
+      "name": "DEMO 1 days / 0",
+      "origin": "Almaty",
+      "transport": "public",
+      "days": [
+        {
+          "destination_ids": [
+            "demo_1"
+          ],
+          "connection_ids": [
+            "demo_1_out",
+            "demo_1_back"
+          ]
+        }
+      ],
+      "food_cost_id": "food",
+      "accommodation_cost_id": null,
+      "activity_cost_ids": {
+        "demo_1": [
+          "entry"
+        ]
+      },
+      "available_from": "2026-01-01",
+      "available_until": "2030-12-31",
+      "max_travelers": 20,
+      "source_ids": [
+        "synthetic"
+      ],
+      "warnings": [
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL."
+      ]
+    },
+    {
+      "id": "demo_1d_1",
+      "name": "DEMO 1 days / 1",
+      "origin": "Almaty",
+      "transport": "public",
+      "days": [
+        {
+          "destination_ids": [
+            "demo_2"
+          ],
+          "connection_ids": [
+            "demo_2_out",
+            "demo_2_back"
+          ]
+        }
+      ],
+      "food_cost_id": "food",
+      "accommodation_cost_id": null,
+      "activity_cost_ids": {
+        "demo_2": [
+          "entry"
+        ]
+      },
+      "available_from": "2026-01-01",
+      "available_until": "2030-12-31",
+      "max_travelers": 20,
+      "source_ids": [
+        "synthetic"
+      ],
+      "warnings": [
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL."
+      ]
+    },
+    {
+      "id": "demo_1d_2",
+      "name": "DEMO 1 days / 2",
+      "origin": "Almaty",
+      "transport": "public",
+      "days": [
+        {
+          "destination_ids": [
+            "demo_3"
+          ],
+          "connection_ids": [
+            "demo_3_out",
+            "demo_3_back"
+          ]
+        }
+      ],
+      "food_cost_id": "food",
+      "accommodation_cost_id": null,
+      "activity_cost_ids": {
+        "demo_3": [
+          "entry"
+        ]
+      },
+      "available_from": "2026-01-01",
+      "available_until": "2030-12-31",
+      "max_travelers": 20,
+      "source_ids": [
+        "synthetic"
+      ],
+      "warnings": [
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL."
+      ]
+    },
+    {
+      "id": "demo_2d_0",
+      "name": "DEMO 2 days / 0",
+      "origin": "Almaty",
+      "transport": "public",
+      "days": [
+        {
+          "destination_ids": [
+            "demo_1"
+          ],
+          "connection_ids": [
+            "demo_1_out",
+            "demo_1_back"
+          ]
+        },
+        {
+          "destination_ids": [
+            "demo_2"
+          ],
+          "connection_ids": [
+            "demo_2_out",
+            "demo_2_back"
+          ]
+        }
+      ],
+      "food_cost_id": "food",
+      "accommodation_cost_id": "room",
+      "activity_cost_ids": {
+        "demo_1": [
+          "entry"
+        ],
+        "demo_2": [
+          "entry"
+        ]
+      },
+      "available_from": "2026-01-01",
+      "available_until": "2030-12-31",
+      "max_travelers": 20,
+      "source_ids": [
+        "synthetic"
+      ],
+      "warnings": [
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL."
+      ]
+    },
+    {
+      "id": "demo_2d_1",
+      "name": "DEMO 2 days / 1",
+      "origin": "Almaty",
+      "transport": "public",
+      "days": [
+        {
+          "destination_ids": [
+            "demo_2"
+          ],
+          "connection_ids": [
+            "demo_2_out",
+            "demo_2_back"
+          ]
+        },
+        {
+          "destination_ids": [
+            "demo_3"
+          ],
+          "connection_ids": [
+            "demo_3_out",
+            "demo_3_back"
+          ]
+        }
+      ],
+      "food_cost_id": "food",
+      "accommodation_cost_id": "room",
+      "activity_cost_ids": {
+        "demo_2": [
+          "entry"
+        ],
+        "demo_3": [
+          "entry"
+        ]
+      },
+      "available_from": "2026-01-01",
+      "available_until": "2030-12-31",
+      "max_travelers": 20,
+      "source_ids": [
+        "synthetic"
+      ],
+      "warnings": [
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL."
+      ]
+    },
+    {
+      "id": "demo_2d_2",
+      "name": "DEMO 2 days / 2",
+      "origin": "Almaty",
+      "transport": "public",
+      "days": [
+        {
+          "destination_ids": [
+            "demo_3"
+          ],
+          "connection_ids": [
+            "demo_3_out",
+            "demo_3_back"
+          ]
+        },
+        {
+          "destination_ids": [
+            "demo_1"
+          ],
+          "connection_ids": [
+            "demo_1_out",
+            "demo_1_back"
+          ]
+        }
+      ],
+      "food_cost_id": "food",
+      "accommodation_cost_id": "room",
+      "activity_cost_ids": {
+        "demo_3": [
+          "entry"
+        ],
+        "demo_1": [
+          "entry"
+        ]
+      },
+      "available_from": "2026-01-01",
+      "available_until": "2030-12-31",
+      "max_travelers": 20,
+      "source_ids": [
+        "synthetic"
+      ],
+      "warnings": [
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL."
+      ]
+    },
+    {
+      "id": "demo_3d_0",
+      "name": "DEMO 3 days / 0",
+      "origin": "Almaty",
+      "transport": "public",
+      "days": [
+        {
+          "destination_ids": [
+            "demo_1"
+          ],
+          "connection_ids": [
+            "demo_1_out",
+            "demo_1_back"
+          ]
+        },
+        {
+          "destination_ids": [
+            "demo_2"
+          ],
+          "connection_ids": [
+            "demo_2_out",
+            "demo_2_back"
+          ]
+        },
+        {
+          "destination_ids": [
+            "demo_3"
+          ],
+          "connection_ids": [
+            "demo_3_out",
+            "demo_3_back"
+          ]
+        }
+      ],
+      "food_cost_id": "food",
+      "accommodation_cost_id": "room",
+      "activity_cost_ids": {
+        "demo_1": [
+          "entry"
+        ],
+        "demo_2": [
+          "entry"
+        ],
+        "demo_3": [
+          "entry"
+        ]
+      },
+      "available_from": "2026-01-01",
+      "available_until": "2030-12-31",
+      "max_travelers": 20,
+      "source_ids": [
+        "synthetic"
+      ],
+      "warnings": [
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL."
+      ]
+    },
+    {
+      "id": "demo_3d_1",
+      "name": "DEMO 3 days / 1",
+      "origin": "Almaty",
+      "transport": "public",
+      "days": [
+        {
+          "destination_ids": [
+            "demo_2"
+          ],
+          "connection_ids": [
+            "demo_2_out",
+            "demo_2_back"
+          ]
+        },
+        {
+          "destination_ids": [
+            "demo_3"
+          ],
+          "connection_ids": [
+            "demo_3_out",
+            "demo_3_back"
+          ]
+        },
+        {
+          "destination_ids": [
+            "demo_1"
+          ],
+          "connection_ids": [
+            "demo_1_out",
+            "demo_1_back"
+          ]
+        }
+      ],
+      "food_cost_id": "food",
+      "accommodation_cost_id": "room",
+      "activity_cost_ids": {
+        "demo_2": [
+          "entry"
+        ],
+        "demo_3": [
+          "entry"
+        ],
+        "demo_1": [
+          "entry"
+        ]
+      },
+      "available_from": "2026-01-01",
+      "available_until": "2030-12-31",
+      "max_travelers": 20,
+      "source_ids": [
+        "synthetic"
+      ],
+      "warnings": [
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL."
+      ]
+    },
+    {
+      "id": "demo_3d_2",
+      "name": "DEMO 3 days / 2",
+      "origin": "Almaty",
+      "transport": "public",
+      "days": [
+        {
+          "destination_ids": [
+            "demo_3"
+          ],
+          "connection_ids": [
+            "demo_3_out",
+            "demo_3_back"
+          ]
+        },
+        {
+          "destination_ids": [
+            "demo_1"
+          ],
+          "connection_ids": [
+            "demo_1_out",
+            "demo_1_back"
+          ]
+        },
+        {
+          "destination_ids": [
+            "demo_2"
+          ],
+          "connection_ids": [
+            "demo_2_out",
+            "demo_2_back"
+          ]
+        }
+      ],
+      "food_cost_id": "food",
+      "accommodation_cost_id": "room",
+      "activity_cost_ids": {
+        "demo_3": [
+          "entry"
+        ],
+        "demo_1": [
+          "entry"
+        ],
+        "demo_2": [
+          "entry"
+        ]
+      },
+      "available_from": "2026-01-01",
+      "available_until": "2030-12-31",
+      "max_travelers": 20,
+      "source_ids": [
+        "synthetic"
+      ],
+      "warnings": [
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL."
+      ]
+    }
+  ]
+}

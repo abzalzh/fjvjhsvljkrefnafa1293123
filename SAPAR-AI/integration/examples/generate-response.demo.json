@@ -1,0 +1,1189 @@
+{
+  "schema_version": "1.0",
+  "status": "success",
+  "preferences": {
+    "origin": "Almaty",
+    "budget_kzt": 70000,
+    "days": 3,
+    "travelers": 1,
+    "transport": "public",
+    "interests": [
+      "nature"
+    ],
+    "language": "ru",
+    "start_date": "2026-11-26",
+    "max_day_minutes": 600,
+    "require_accessible": false
+  },
+  "trips": [
+    {
+      "id": "demo_3d_0",
+      "name": "DEMO 3 days / 0",
+      "category": "economy",
+      "days": 3,
+      "travelers": 1,
+      "transport": "public",
+      "estimated_total_kzt": 40100,
+      "cost_range_kzt": {
+        "min_kzt": 29500,
+        "max_kzt": 40100
+      },
+      "budget_breakdown": {
+        "transport": {
+          "min_kzt": 6000,
+          "max_kzt": 9000
+        },
+        "accommodation": {
+          "min_kzt": 16000,
+          "max_kzt": 20000
+        },
+        "food": {
+          "min_kzt": 6000,
+          "max_kzt": 9000
+        },
+        "activities": {
+          "min_kzt": 1500,
+          "max_kzt": 2100
+        }
+      },
+      "within_budget": true,
+      "remaining_budget_kzt": 29900,
+      "feasibility": "estimated",
+      "destinations": [
+        {
+          "id": "demo_1",
+          "name": "DEMO Object 1",
+          "description": "Fictional test object; coordinates are placeholders.",
+          "region": "DEMO",
+          "latitude": 0.0,
+          "longitude": 1.0,
+          "interests": [
+            "nature"
+          ],
+          "visit_minutes": 60,
+          "opens_minute": 540,
+          "closes_minute": 1080,
+          "transport": [
+            "public",
+            "car"
+          ],
+          "open_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "infrastructure": {
+            "mobile": "unknown",
+            "toilets": "unknown",
+            "food": "unknown",
+            "accommodation": "unknown",
+            "accessible": "unknown"
+          },
+          "warnings": [],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_2",
+          "name": "DEMO Object 2",
+          "description": "Fictional test object; coordinates are placeholders.",
+          "region": "DEMO",
+          "latitude": 0.0,
+          "longitude": 2.0,
+          "interests": [
+            "nature",
+            "culture"
+          ],
+          "visit_minutes": 120,
+          "opens_minute": 540,
+          "closes_minute": 1080,
+          "transport": [
+            "public",
+            "car"
+          ],
+          "open_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "infrastructure": {
+            "mobile": "unknown",
+            "toilets": "unknown",
+            "food": "unknown",
+            "accommodation": "unknown",
+            "accessible": "unknown"
+          },
+          "warnings": [],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_3",
+          "name": "DEMO Object 3",
+          "description": "Fictional test object; coordinates are placeholders.",
+          "region": "DEMO",
+          "latitude": 0.0,
+          "longitude": 3.0,
+          "interests": [
+            "nature"
+          ],
+          "visit_minutes": 180,
+          "opens_minute": 540,
+          "closes_minute": 1080,
+          "transport": [
+            "public",
+            "car"
+          ],
+          "open_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "infrastructure": {
+            "mobile": "unknown",
+            "toilets": "unknown",
+            "food": "unknown",
+            "accommodation": "unknown",
+            "accessible": "unknown"
+          },
+          "warnings": [],
+          "source_ids": [
+            "synthetic"
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "id": "demo_1_out",
+          "origin": "Almaty",
+          "destination": "demo_1",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            540
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_1_back",
+          "origin": "demo_1",
+          "destination": "Almaty",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            900
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_2_out",
+          "origin": "Almaty",
+          "destination": "demo_2",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            540
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_2_back",
+          "origin": "demo_2",
+          "destination": "Almaty",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            900
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_3_out",
+          "origin": "Almaty",
+          "destination": "demo_3",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            540
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_3_back",
+          "origin": "demo_3",
+          "destination": "Almaty",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            900
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        }
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "2026-11-26",
+          "items": [
+            {
+              "kind": "travel",
+              "reference_id": "demo_1_out",
+              "start_minute": 540,
+              "end_minute": 600
+            },
+            {
+              "kind": "visit",
+              "reference_id": "demo_1",
+              "start_minute": 600,
+              "end_minute": 660
+            },
+            {
+              "kind": "wait",
+              "reference_id": "demo_1_back",
+              "start_minute": 660,
+              "end_minute": 900
+            },
+            {
+              "kind": "travel",
+              "reference_id": "demo_1_back",
+              "start_minute": 900,
+              "end_minute": 960
+            }
+          ],
+          "duration_minutes": 420
+        },
+        {
+          "day": 2,
+          "date": "2026-11-27",
+          "items": [
+            {
+              "kind": "travel",
+              "reference_id": "demo_2_out",
+              "start_minute": 540,
+              "end_minute": 600
+            },
+            {
+              "kind": "visit",
+              "reference_id": "demo_2",
+              "start_minute": 600,
+              "end_minute": 720
+            },
+            {
+              "kind": "wait",
+              "reference_id": "demo_2_back",
+              "start_minute": 720,
+              "end_minute": 900
+            },
+            {
+              "kind": "travel",
+              "reference_id": "demo_2_back",
+              "start_minute": 900,
+              "end_minute": 960
+            }
+          ],
+          "duration_minutes": 420
+        },
+        {
+          "day": 3,
+          "date": "2026-11-28",
+          "items": [
+            {
+              "kind": "travel",
+              "reference_id": "demo_3_out",
+              "start_minute": 540,
+              "end_minute": 600
+            },
+            {
+              "kind": "visit",
+              "reference_id": "demo_3",
+              "start_minute": 600,
+              "end_minute": 780
+            },
+            {
+              "kind": "wait",
+              "reference_id": "demo_3_back",
+              "start_minute": 780,
+              "end_minute": 900
+            },
+            {
+              "kind": "travel",
+              "reference_id": "demo_3_back",
+              "start_minute": 900,
+              "end_minute": 960
+            }
+          ],
+          "duration_minutes": 420
+        }
+      ],
+      "warnings": [
+        "DEMO: синтетические тестовые данные, не использовать для поездок.",
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL.",
+        "Расчётная осуществимость и оценочные расходы не гарантируют доступность, цену или безопасность.",
+        "Часть инфраструктуры не подтверждена; см. unknown_fields."
+      ],
+      "sources": [
+        {
+          "id": "synthetic",
+          "title": "SYNTHETIC TEST FIXTURE — not travel data",
+          "url": "https://example.invalid/test-fixture",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "unknown_fields": [
+        "demo_1.infrastructure.mobile",
+        "demo_1.infrastructure.toilets",
+        "demo_1.infrastructure.food",
+        "demo_1.infrastructure.accommodation",
+        "demo_1.infrastructure.accessible",
+        "demo_2.infrastructure.mobile",
+        "demo_2.infrastructure.toilets",
+        "demo_2.infrastructure.food",
+        "demo_2.infrastructure.accommodation",
+        "demo_2.infrastructure.accessible",
+        "demo_3.infrastructure.mobile",
+        "demo_3.infrastructure.toilets",
+        "demo_3.infrastructure.food",
+        "demo_3.infrastructure.accommodation",
+        "demo_3.infrastructure.accessible"
+      ],
+      "score": 59.17,
+      "recommendation_reasons": [
+        "Верхняя граница расходов укладывается в общий бюджет.",
+        "Совпавшие интересы: nature."
+      ]
+    },
+    {
+      "id": "demo_3d_1",
+      "name": "DEMO 3 days / 1",
+      "category": "balanced",
+      "days": 3,
+      "travelers": 1,
+      "transport": "public",
+      "estimated_total_kzt": 40100,
+      "cost_range_kzt": {
+        "min_kzt": 29500,
+        "max_kzt": 40100
+      },
+      "budget_breakdown": {
+        "transport": {
+          "min_kzt": 6000,
+          "max_kzt": 9000
+        },
+        "accommodation": {
+          "min_kzt": 16000,
+          "max_kzt": 20000
+        },
+        "food": {
+          "min_kzt": 6000,
+          "max_kzt": 9000
+        },
+        "activities": {
+          "min_kzt": 1500,
+          "max_kzt": 2100
+        }
+      },
+      "within_budget": true,
+      "remaining_budget_kzt": 29900,
+      "feasibility": "estimated",
+      "destinations": [
+        {
+          "id": "demo_2",
+          "name": "DEMO Object 2",
+          "description": "Fictional test object; coordinates are placeholders.",
+          "region": "DEMO",
+          "latitude": 0.0,
+          "longitude": 2.0,
+          "interests": [
+            "nature",
+            "culture"
+          ],
+          "visit_minutes": 120,
+          "opens_minute": 540,
+          "closes_minute": 1080,
+          "transport": [
+            "public",
+            "car"
+          ],
+          "open_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "infrastructure": {
+            "mobile": "unknown",
+            "toilets": "unknown",
+            "food": "unknown",
+            "accommodation": "unknown",
+            "accessible": "unknown"
+          },
+          "warnings": [],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_3",
+          "name": "DEMO Object 3",
+          "description": "Fictional test object; coordinates are placeholders.",
+          "region": "DEMO",
+          "latitude": 0.0,
+          "longitude": 3.0,
+          "interests": [
+            "nature"
+          ],
+          "visit_minutes": 180,
+          "opens_minute": 540,
+          "closes_minute": 1080,
+          "transport": [
+            "public",
+            "car"
+          ],
+          "open_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "infrastructure": {
+            "mobile": "unknown",
+            "toilets": "unknown",
+            "food": "unknown",
+            "accommodation": "unknown",
+            "accessible": "unknown"
+          },
+          "warnings": [],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_1",
+          "name": "DEMO Object 1",
+          "description": "Fictional test object; coordinates are placeholders.",
+          "region": "DEMO",
+          "latitude": 0.0,
+          "longitude": 1.0,
+          "interests": [
+            "nature"
+          ],
+          "visit_minutes": 60,
+          "opens_minute": 540,
+          "closes_minute": 1080,
+          "transport": [
+            "public",
+            "car"
+          ],
+          "open_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "infrastructure": {
+            "mobile": "unknown",
+            "toilets": "unknown",
+            "food": "unknown",
+            "accommodation": "unknown",
+            "accessible": "unknown"
+          },
+          "warnings": [],
+          "source_ids": [
+            "synthetic"
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "id": "demo_2_out",
+          "origin": "Almaty",
+          "destination": "demo_2",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            540
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_2_back",
+          "origin": "demo_2",
+          "destination": "Almaty",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            900
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_3_out",
+          "origin": "Almaty",
+          "destination": "demo_3",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            540
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_3_back",
+          "origin": "demo_3",
+          "destination": "Almaty",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            900
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_1_out",
+          "origin": "Almaty",
+          "destination": "demo_1",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            540
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_1_back",
+          "origin": "demo_1",
+          "destination": "Almaty",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            900
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        }
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "2026-11-26",
+          "items": [
+            {
+              "kind": "travel",
+              "reference_id": "demo_2_out",
+              "start_minute": 540,
+              "end_minute": 600
+            },
+            {
+              "kind": "visit",
+              "reference_id": "demo_2",
+              "start_minute": 600,
+              "end_minute": 720
+            },
+            {
+              "kind": "wait",
+              "reference_id": "demo_2_back",
+              "start_minute": 720,
+              "end_minute": 900
+            },
+            {
+              "kind": "travel",
+              "reference_id": "demo_2_back",
+              "start_minute": 900,
+              "end_minute": 960
+            }
+          ],
+          "duration_minutes": 420
+        },
+        {
+          "day": 2,
+          "date": "2026-11-27",
+          "items": [
+            {
+              "kind": "travel",
+              "reference_id": "demo_3_out",
+              "start_minute": 540,
+              "end_minute": 600
+            },
+            {
+              "kind": "visit",
+              "reference_id": "demo_3",
+              "start_minute": 600,
+              "end_minute": 780
+            },
+            {
+              "kind": "wait",
+              "reference_id": "demo_3_back",
+              "start_minute": 780,
+              "end_minute": 900
+            },
+            {
+              "kind": "travel",
+              "reference_id": "demo_3_back",
+              "start_minute": 900,
+              "end_minute": 960
+            }
+          ],
+          "duration_minutes": 420
+        },
+        {
+          "day": 3,
+          "date": "2026-11-28",
+          "items": [
+            {
+              "kind": "travel",
+              "reference_id": "demo_1_out",
+              "start_minute": 540,
+              "end_minute": 600
+            },
+            {
+              "kind": "visit",
+              "reference_id": "demo_1",
+              "start_minute": 600,
+              "end_minute": 660
+            },
+            {
+              "kind": "wait",
+              "reference_id": "demo_1_back",
+              "start_minute": 660,
+              "end_minute": 900
+            },
+            {
+              "kind": "travel",
+              "reference_id": "demo_1_back",
+              "start_minute": 900,
+              "end_minute": 960
+            }
+          ],
+          "duration_minutes": 420
+        }
+      ],
+      "warnings": [
+        "DEMO: синтетические тестовые данные, не использовать для поездок.",
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL.",
+        "Расчётная осуществимость и оценочные расходы не гарантируют доступность, цену или безопасность.",
+        "Часть инфраструктуры не подтверждена; см. unknown_fields."
+      ],
+      "sources": [
+        {
+          "id": "synthetic",
+          "title": "SYNTHETIC TEST FIXTURE — not travel data",
+          "url": "https://example.invalid/test-fixture",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "unknown_fields": [
+        "demo_2.infrastructure.mobile",
+        "demo_2.infrastructure.toilets",
+        "demo_2.infrastructure.food",
+        "demo_2.infrastructure.accommodation",
+        "demo_2.infrastructure.accessible",
+        "demo_3.infrastructure.mobile",
+        "demo_3.infrastructure.toilets",
+        "demo_3.infrastructure.food",
+        "demo_3.infrastructure.accommodation",
+        "demo_3.infrastructure.accessible",
+        "demo_1.infrastructure.mobile",
+        "demo_1.infrastructure.toilets",
+        "demo_1.infrastructure.food",
+        "demo_1.infrastructure.accommodation",
+        "demo_1.infrastructure.accessible"
+      ],
+      "score": 59.17,
+      "recommendation_reasons": [
+        "Верхняя граница расходов укладывается в общий бюджет.",
+        "Совпавшие интересы: nature."
+      ]
+    },
+    {
+      "id": "demo_3d_2",
+      "name": "DEMO 3 days / 2",
+      "category": "activities",
+      "days": 3,
+      "travelers": 1,
+      "transport": "public",
+      "estimated_total_kzt": 40100,
+      "cost_range_kzt": {
+        "min_kzt": 29500,
+        "max_kzt": 40100
+      },
+      "budget_breakdown": {
+        "transport": {
+          "min_kzt": 6000,
+          "max_kzt": 9000
+        },
+        "accommodation": {
+          "min_kzt": 16000,
+          "max_kzt": 20000
+        },
+        "food": {
+          "min_kzt": 6000,
+          "max_kzt": 9000
+        },
+        "activities": {
+          "min_kzt": 1500,
+          "max_kzt": 2100
+        }
+      },
+      "within_budget": true,
+      "remaining_budget_kzt": 29900,
+      "feasibility": "estimated",
+      "destinations": [
+        {
+          "id": "demo_3",
+          "name": "DEMO Object 3",
+          "description": "Fictional test object; coordinates are placeholders.",
+          "region": "DEMO",
+          "latitude": 0.0,
+          "longitude": 3.0,
+          "interests": [
+            "nature"
+          ],
+          "visit_minutes": 180,
+          "opens_minute": 540,
+          "closes_minute": 1080,
+          "transport": [
+            "public",
+            "car"
+          ],
+          "open_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "infrastructure": {
+            "mobile": "unknown",
+            "toilets": "unknown",
+            "food": "unknown",
+            "accommodation": "unknown",
+            "accessible": "unknown"
+          },
+          "warnings": [],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_1",
+          "name": "DEMO Object 1",
+          "description": "Fictional test object; coordinates are placeholders.",
+          "region": "DEMO",
+          "latitude": 0.0,
+          "longitude": 1.0,
+          "interests": [
+            "nature"
+          ],
+          "visit_minutes": 60,
+          "opens_minute": 540,
+          "closes_minute": 1080,
+          "transport": [
+            "public",
+            "car"
+          ],
+          "open_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "infrastructure": {
+            "mobile": "unknown",
+            "toilets": "unknown",
+            "food": "unknown",
+            "accommodation": "unknown",
+            "accessible": "unknown"
+          },
+          "warnings": [],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_2",
+          "name": "DEMO Object 2",
+          "description": "Fictional test object; coordinates are placeholders.",
+          "region": "DEMO",
+          "latitude": 0.0,
+          "longitude": 2.0,
+          "interests": [
+            "nature",
+            "culture"
+          ],
+          "visit_minutes": 120,
+          "opens_minute": 540,
+          "closes_minute": 1080,
+          "transport": [
+            "public",
+            "car"
+          ],
+          "open_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "infrastructure": {
+            "mobile": "unknown",
+            "toilets": "unknown",
+            "food": "unknown",
+            "accommodation": "unknown",
+            "accessible": "unknown"
+          },
+          "warnings": [],
+          "source_ids": [
+            "synthetic"
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "id": "demo_3_out",
+          "origin": "Almaty",
+          "destination": "demo_3",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            540
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_3_back",
+          "origin": "demo_3",
+          "destination": "Almaty",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            900
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_1_out",
+          "origin": "Almaty",
+          "destination": "demo_1",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            540
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_1_back",
+          "origin": "demo_1",
+          "destination": "Almaty",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            900
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_2_out",
+          "origin": "Almaty",
+          "destination": "demo_2",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            540
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        },
+        {
+          "id": "demo_2_back",
+          "origin": "demo_2",
+          "destination": "Almaty",
+          "transport": "public",
+          "minutes": 60,
+          "distance_km": null,
+          "cost_id": "bus",
+          "departures": [
+            900
+          ],
+          "source_ids": [
+            "synthetic"
+          ]
+        }
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "2026-11-26",
+          "items": [
+            {
+              "kind": "travel",
+              "reference_id": "demo_3_out",
+              "start_minute": 540,
+              "end_minute": 600
+            },
+            {
+              "kind": "visit",
+              "reference_id": "demo_3",
+              "start_minute": 600,
+              "end_minute": 780
+            },
+            {
+              "kind": "wait",
+              "reference_id": "demo_3_back",
+              "start_minute": 780,
+              "end_minute": 900
+            },
+            {
+              "kind": "travel",
+              "reference_id": "demo_3_back",
+              "start_minute": 900,
+              "end_minute": 960
+            }
+          ],
+          "duration_minutes": 420
+        },
+        {
+          "day": 2,
+          "date": "2026-11-27",
+          "items": [
+            {
+              "kind": "travel",
+              "reference_id": "demo_1_out",
+              "start_minute": 540,
+              "end_minute": 600
+            },
+            {
+              "kind": "visit",
+              "reference_id": "demo_1",
+              "start_minute": 600,
+              "end_minute": 660
+            },
+            {
+              "kind": "wait",
+              "reference_id": "demo_1_back",
+              "start_minute": 660,
+              "end_minute": 900
+            },
+            {
+              "kind": "travel",
+              "reference_id": "demo_1_back",
+              "start_minute": 900,
+              "end_minute": 960
+            }
+          ],
+          "duration_minutes": 420
+        },
+        {
+          "day": 3,
+          "date": "2026-11-28",
+          "items": [
+            {
+              "kind": "travel",
+              "reference_id": "demo_2_out",
+              "start_minute": 540,
+              "end_minute": 600
+            },
+            {
+              "kind": "visit",
+              "reference_id": "demo_2",
+              "start_minute": 600,
+              "end_minute": 720
+            },
+            {
+              "kind": "wait",
+              "reference_id": "demo_2_back",
+              "start_minute": 720,
+              "end_minute": 900
+            },
+            {
+              "kind": "travel",
+              "reference_id": "demo_2_back",
+              "start_minute": 900,
+              "end_minute": 960
+            }
+          ],
+          "duration_minutes": 420
+        }
+      ],
+      "warnings": [
+        "DEMO: синтетические тестовые данные, не использовать для поездок.",
+        "SYNTHETIC DATA — DO NOT USE FOR TRAVEL.",
+        "Расчётная осуществимость и оценочные расходы не гарантируют доступность, цену или безопасность.",
+        "Часть инфраструктуры не подтверждена; см. unknown_fields."
+      ],
+      "sources": [
+        {
+          "id": "synthetic",
+          "title": "SYNTHETIC TEST FIXTURE — not travel data",
+          "url": "https://example.invalid/test-fixture",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "unknown_fields": [
+        "demo_3.infrastructure.mobile",
+        "demo_3.infrastructure.toilets",
+        "demo_3.infrastructure.food",
+        "demo_3.infrastructure.accommodation",
+        "demo_3.infrastructure.accessible",
+        "demo_1.infrastructure.mobile",
+        "demo_1.infrastructure.toilets",
+        "demo_1.infrastructure.food",
+        "demo_1.infrastructure.accommodation",
+        "demo_1.infrastructure.accessible",
+        "demo_2.infrastructure.mobile",
+        "demo_2.infrastructure.toilets",
+        "demo_2.infrastructure.food",
+        "demo_2.infrastructure.accommodation",
+        "demo_2.infrastructure.accessible"
+      ],
+      "score": 59.17,
+      "recommendation_reasons": [
+        "Верхняя граница расходов укладывается в общий бюджет.",
+        "Совпавшие интересы: nature."
+      ]
+    }
+  ],
+  "reasons": [],
+  "data_mode": "demo"
+}

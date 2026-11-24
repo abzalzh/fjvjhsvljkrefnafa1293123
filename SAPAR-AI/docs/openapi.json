@@ -1,0 +1,1344 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SAPAR AI Backend",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_api_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/destinations": {
+      "get": {
+        "summary": "Destinations",
+        "operationId": "destinations_api_destinations_get",
+        "parameters": [
+          {
+            "name": "interest",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 80
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Interest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Destination"
+                  },
+                  "title": "Response Destinations Api Destinations Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/destinations/{destination_id}": {
+      "get": {
+        "summary": "Destination",
+        "operationId": "destination_api_destinations__destination_id__get",
+        "parameters": [
+          {
+            "name": "destination_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Destination Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Destination"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/trips/generate": {
+      "post": {
+        "summary": "Trips",
+        "operationId": "trips_api_trips_generate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripPreferences"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TripResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/trips/recalculate": {
+      "post": {
+        "summary": "Recalculate",
+        "operationId": "recalculate_api_trips_recalculate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripPreferences"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TripResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ai/parse": {
+      "post": {
+        "summary": "Ai Parse",
+        "operationId": "ai_parse_api_ai_parse_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParseRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParseResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ai/explain": {
+      "post": {
+        "summary": "Ai Explain",
+        "operationId": "ai_explain_api_ai_explain_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExplainRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExplainResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BudgetBreakdown": {
+        "properties": {
+          "transport": {
+            "$ref": "#/components/schemas/CostEstimate"
+          },
+          "accommodation": {
+            "$ref": "#/components/schemas/CostEstimate"
+          },
+          "food": {
+            "$ref": "#/components/schemas/CostEstimate"
+          },
+          "activities": {
+            "$ref": "#/components/schemas/CostEstimate"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "transport",
+          "accommodation",
+          "food",
+          "activities"
+        ],
+        "title": "BudgetBreakdown"
+      },
+      "CostEstimate": {
+        "properties": {
+          "min_kzt": {
+            "type": "integer",
+            "maximum": 1000000000000000.0,
+            "minimum": 0.0,
+            "title": "Min Kzt"
+          },
+          "max_kzt": {
+            "type": "integer",
+            "maximum": 1000000000000000.0,
+            "minimum": 0.0,
+            "title": "Max Kzt"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "min_kzt",
+          "max_kzt"
+        ],
+        "title": "CostEstimate"
+      },
+      "Destination": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 5000,
+            "title": "Description",
+            "default": ""
+          },
+          "region": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Region"
+          },
+          "latitude": {
+            "type": "number",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Latitude"
+          },
+          "longitude": {
+            "type": "number",
+            "maximum": 180.0,
+            "minimum": -180.0,
+            "title": "Longitude"
+          },
+          "interests": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "minItems": 1,
+            "title": "Interests"
+          },
+          "visit_minutes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 720.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Visit Minutes"
+          },
+          "opens_minute": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 1439.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Opens Minute"
+          },
+          "closes_minute": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 1440.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Closes Minute"
+          },
+          "transport": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "public",
+                "car",
+                "taxi",
+                "tour"
+              ]
+            },
+            "type": "array",
+            "maxItems": 4,
+            "minItems": 1,
+            "title": "Transport"
+          },
+          "open_months": {
+            "items": {
+              "type": "integer",
+              "maximum": 12.0,
+              "minimum": 1.0
+            },
+            "type": "array",
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Open Months"
+          },
+          "infrastructure": {
+            "$ref": "#/components/schemas/Infrastructure"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "source_ids": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Source Ids"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "region",
+          "latitude",
+          "longitude",
+          "interests",
+          "transport",
+          "open_months",
+          "source_ids"
+        ],
+        "title": "Destination"
+      },
+      "ErrorDetail": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "details": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Details"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetail"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorDetail"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "title": "ErrorResponse"
+      },
+      "ExplainRequest": {
+        "properties": {
+          "trip_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Trip Id"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/TripPreferences"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "ru",
+              "kk",
+              "en"
+            ],
+            "title": "Language",
+            "default": "ru"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "trip_id",
+          "preferences"
+        ],
+        "title": "ExplainRequest"
+      },
+      "ExplainResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "explanation"
+        ],
+        "title": "ExplainResponse"
+      },
+      "Infrastructure": {
+        "properties": {
+          "mobile": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "limited",
+              "no",
+              "unknown"
+            ],
+            "title": "Mobile",
+            "default": "unknown"
+          },
+          "toilets": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "title": "Toilets",
+            "default": "unknown"
+          },
+          "food": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "title": "Food",
+            "default": "unknown"
+          },
+          "accommodation": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "title": "Accommodation",
+            "default": "unknown"
+          },
+          "accessible": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "title": "Accessible",
+            "default": "unknown"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Infrastructure"
+      },
+      "ItineraryItem": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "travel",
+              "visit",
+              "wait"
+            ],
+            "title": "Kind"
+          },
+          "reference_id": {
+            "type": "string",
+            "title": "Reference Id"
+          },
+          "start_minute": {
+            "type": "integer",
+            "title": "Start Minute"
+          },
+          "end_minute": {
+            "type": "integer",
+            "title": "End Minute"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "kind",
+          "reference_id",
+          "start_minute",
+          "end_minute"
+        ],
+        "title": "ItineraryItem"
+      },
+      "ParseRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/TripPreferences"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text",
+          "preferences"
+        ],
+        "title": "ParseRequest"
+      },
+      "ParseResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "changes": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Changes"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/TripPreferences"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "changes",
+          "preferences",
+          "warnings"
+        ],
+        "title": "ParseResponse"
+      },
+      "Reason": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "suggested_fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Suggested Fields"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "suggested_fields"
+        ],
+        "title": "Reason"
+      },
+      "Source": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Title"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 2083,
+            "minLength": 1,
+            "format": "uri",
+            "title": "Url"
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date",
+            "title": "Checked At"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "url",
+          "checked_at"
+        ],
+        "title": "Source"
+      },
+      "TransportConnection": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "title": "Id"
+          },
+          "origin": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Origin"
+          },
+          "destination": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Destination"
+          },
+          "transport": {
+            "type": "string",
+            "enum": [
+              "public",
+              "car",
+              "taxi",
+              "tour"
+            ],
+            "title": "Transport"
+          },
+          "minutes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 1440.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Minutes"
+          },
+          "distance_km": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Distance Km"
+          },
+          "cost_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "title": "Cost Id"
+          },
+          "departures": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "integer",
+                  "maximum": 1439.0,
+                  "minimum": 0.0
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Departures"
+          },
+          "source_ids": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Source Ids"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "origin",
+          "destination",
+          "transport",
+          "cost_id",
+          "source_ids"
+        ],
+        "title": "TransportConnection"
+      },
+      "TripDay": {
+        "properties": {
+          "day": {
+            "type": "integer",
+            "title": "Day"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "title": "Date"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ItineraryItem"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "duration_minutes": {
+            "type": "integer",
+            "title": "Duration Minutes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "day",
+          "date",
+          "items",
+          "duration_minutes"
+        ],
+        "title": "TripDay"
+      },
+      "TripOption": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "economy",
+              "balanced",
+              "activities"
+            ],
+            "title": "Category"
+          },
+          "days": {
+            "type": "integer",
+            "title": "Days"
+          },
+          "travelers": {
+            "type": "integer",
+            "title": "Travelers"
+          },
+          "transport": {
+            "type": "string",
+            "enum": [
+              "public",
+              "car",
+              "taxi",
+              "tour"
+            ],
+            "title": "Transport"
+          },
+          "estimated_total_kzt": {
+            "type": "integer",
+            "maximum": 1000000000000000.0,
+            "minimum": 0.0,
+            "title": "Estimated Total Kzt"
+          },
+          "cost_range_kzt": {
+            "$ref": "#/components/schemas/CostEstimate"
+          },
+          "budget_breakdown": {
+            "$ref": "#/components/schemas/BudgetBreakdown"
+          },
+          "within_budget": {
+            "type": "boolean",
+            "title": "Within Budget"
+          },
+          "remaining_budget_kzt": {
+            "type": "integer",
+            "title": "Remaining Budget Kzt"
+          },
+          "feasibility": {
+            "type": "string",
+            "const": "estimated",
+            "title": "Feasibility",
+            "default": "estimated"
+          },
+          "destinations": {
+            "items": {
+              "$ref": "#/components/schemas/Destination"
+            },
+            "type": "array",
+            "title": "Destinations"
+          },
+          "connections": {
+            "items": {
+              "$ref": "#/components/schemas/TransportConnection"
+            },
+            "type": "array",
+            "title": "Connections"
+          },
+          "itinerary": {
+            "items": {
+              "$ref": "#/components/schemas/TripDay"
+            },
+            "type": "array",
+            "title": "Itinerary"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "unknown_fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Unknown Fields"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "recommendation_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Recommendation Reasons"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "category",
+          "days",
+          "travelers",
+          "transport",
+          "estimated_total_kzt",
+          "cost_range_kzt",
+          "budget_breakdown",
+          "within_budget",
+          "remaining_budget_kzt",
+          "destinations",
+          "connections",
+          "itinerary",
+          "warnings",
+          "sources",
+          "unknown_fields",
+          "score",
+          "recommendation_reasons"
+        ],
+        "title": "TripOption"
+      },
+      "TripPreferences": {
+        "properties": {
+          "origin": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Origin",
+            "default": "Almaty"
+          },
+          "budget_kzt": {
+            "type": "integer",
+            "maximum": 1000000000000000.0,
+            "minimum": 0.0,
+            "title": "Budget Kzt"
+          },
+          "days": {
+            "type": "integer",
+            "maximum": 14.0,
+            "minimum": 1.0,
+            "title": "Days"
+          },
+          "travelers": {
+            "type": "integer",
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "title": "Travelers"
+          },
+          "transport": {
+            "type": "string",
+            "enum": [
+              "public",
+              "car",
+              "taxi",
+              "tour"
+            ],
+            "title": "Transport"
+          },
+          "interests": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Interests"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "ru",
+              "kk",
+              "en"
+            ],
+            "title": "Language",
+            "default": "ru"
+          },
+          "start_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start Date"
+          },
+          "max_day_minutes": {
+            "type": "integer",
+            "maximum": 840.0,
+            "minimum": 60.0,
+            "title": "Max Day Minutes",
+            "default": 600
+          },
+          "require_accessible": {
+            "type": "boolean",
+            "title": "Require Accessible",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "budget_kzt",
+          "days",
+          "travelers",
+          "transport"
+        ],
+        "title": "TripPreferences"
+      },
+      "TripResponse": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "1.0",
+            "title": "Schema Version",
+            "default": "1.0"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "success",
+              "no_results"
+            ],
+            "title": "Status"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/TripPreferences"
+          },
+          "trips": {
+            "items": {
+              "$ref": "#/components/schemas/TripOption"
+            },
+            "type": "array",
+            "title": "Trips"
+          },
+          "reasons": {
+            "items": {
+              "$ref": "#/components/schemas/Reason"
+            },
+            "type": "array",
+            "title": "Reasons"
+          },
+          "data_mode": {
+            "type": "string",
+            "enum": [
+              "real",
+              "demo"
+            ],
+            "title": "Data Mode"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "preferences",
+          "trips",
+          "reasons",
+          "data_mode"
+        ],
+        "title": "TripResponse"
+      }
+    }
+  }
+}

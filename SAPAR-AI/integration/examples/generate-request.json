@@ -1,0 +1,14 @@
+{
+  "origin": "Almaty",
+  "budget_kzt": 70000,
+  "days": 3,
+  "travelers": 1,
+  "transport": "public",
+  "interests": [
+    "nature"
+  ],
+  "language": "ru",
+  "start_date": "2026-11-26",
+  "max_day_minutes": 600,
+  "require_accessible": false
+}
